@@ -1,0 +1,25 @@
+// mixins.scss
+
+// Transition
+@mixin transition($effect) {
+    -webkit-transition: $effect;
+    -moz-transition: $effect;
+    -ms-transition: $effect;
+    transition: $effect;
+}
+
+
+// Animation
+@mixin animate($param) {
+    -webkit-animation: $param;
+    -moz-animation: $param; 
+    animation: $param;
+}
+
+
+// Grid
+@mixin break-inside($param) {
+    -webkit-column-break-inside: $param; /* Chrome, Safari, Opera */
+    page-break-inside: $param; /* Firefox */
+         break-inside: $param; /* IE 10+ */
+}

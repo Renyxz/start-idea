@@ -1,0 +1,64 @@
+// Imports
+@import 'src/sass/styles.scss';
+
+$a-fade-in: fade-in 0.3s linear;
+
+// Sign In
+.sign-in-wrapper {
+    display: grid;
+    height: 100vh;
+    @include animate($a-fade-in);
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-self: center;
+            
+            div {
+                text-align: center;
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    line-height: 1.5;
+
+                    span {
+                        color: $primary-green;
+                    }
+                }
+
+            }
+
+            a {
+                width: inherit;
+                background: $white;
+                padding: 0.8rem 2rem;
+                margin: 0.5rem 0;
+                border-radius: 3px;
+                border: $border;
+
+                i {
+                    margin-right: 1rem;
+                }
+            }
+
+            a:hover {
+                border-color: $light-green;
+            }
+        
+            a:last-child {
+                border: none;
+                margin-top: 1rem;
+                padding: 0;
+                font-size: 0.8rem;
+                color: $primary-green;
+                text-align: center
+            }
+    }
+}

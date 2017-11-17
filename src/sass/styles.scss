@@ -1,0 +1,51 @@
+// Imports
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import 'variables.scss';
+@import 'mixins.scss';
+
+
+// reset.scss
+
+html,
+body,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}    
+
+li {
+    list-style: none;
+}    
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a,
+input,
+button {
+    @include transition($fade-in);
+}
+
+
+
+
+// Styles
+body {
+    font-family: $font-stack;
+    color: $primary-color;
+    font-size: $size;
+    background: $white;
+}
+
+::selection {
+    background: $sec-green;
+    color: $white;
+}
+

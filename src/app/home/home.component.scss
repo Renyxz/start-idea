@@ -1,0 +1,37 @@
+// Imports
+@import 'src/sass/styles.scss';
+
+
+// Add button
+.add-button {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: fixed;
+    z-index: 1;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: $border;
+    border-color: $light-green;
+    cursor: pointer;
+    @include transition($fade-in);
+
+    span {
+        justify-self: center;
+        align-self: center;
+        font-size: 1.8rem;
+        color: $light-green;
+    }
+} 
+
+.add-button:hover {
+    border-color: $sec-green;
+    background: $sec-green;
+    
+    span {
+        color: $white;
+    }
+}
+

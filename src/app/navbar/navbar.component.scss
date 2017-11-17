@@ -1,0 +1,95 @@
+// Imports
+@import 'src/sass/styles.scss';
+
+
+
+
+// Navbar
+.nav-bar {
+    background: $white;
+    width: $full-width;
+    position: fixed;
+    z-index: 999;
+    padding: 1rem 0;
+    border-bottom: 1px solid $light-grey;    
+}
+
+.logo {
+
+    a {
+        font-size: 2rem;
+        color: $primary-green;
+        font-family: 'Lobster', cursive;
+        @include transition($fade-in);
+    }
+
+    a:hover {
+        color: $sec-green;
+    }
+}
+
+.nav-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 3rem;
+}
+
+.nav-wrapper {
+    div:last-child {
+        display: flex;
+        justify-self: right;
+        align-self: center;
+
+        div:last-child {
+            display: flex;
+            margin-left: 3rem;
+
+            a {
+                font-size: 0.8rem;
+                margin-left: 1rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            a:last-child {
+                border: $border;
+                border-color: $light-green;
+                color: $light-green;
+                border-radius: 3px;
+            }
+
+            a:last-child:hover {
+                border-color: $primary-green;
+                background: $primary-green;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+.search-bar {
+    position: relative;
+    
+    input {
+        padding: 0.5rem 1rem;
+        border: $border;
+        border-radius: 18px;
+    }
+    
+    input:focus {
+        outline: none;
+        border-color: $light-green;
+    }
+
+    i {
+        position: absolute;
+        right: 12px;
+        top: 8px;
+        padding-left: 0.5rem;
+        background: $white;
+    }
+
+    i:hover {
+        cursor: pointer;
+    }
+}
