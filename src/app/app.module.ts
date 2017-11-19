@@ -10,6 +10,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserComponent } from './user/user.component';
 import { IdeasComponent } from './home/ideas/ideas.component';
+import { AddIdeaComponent } from './add-idea/add-idea.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { IdeasComponent } from './home/ideas/ideas.component';
     SignInComponent,
     SignUpComponent,
     UserComponent,
-    IdeasComponent
+    IdeasComponent,
+    AddIdeaComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddIdeaComponent } from './add-idea/add-idea.component';
+
+
 
 const routes: Routes = [
   {
@@ -12,14 +15,24 @@ const routes: Routes = [
 
   {
     path: 'sign-in',
-    component: SignInComponent
+    component: SignInComponent,
   },
-
   {
     path: 'sign-up',
     component: SignUpComponent
+  },
+  {
+    path: 'add-idea',
+    component: AddIdeaComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

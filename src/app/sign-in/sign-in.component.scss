@@ -1,12 +1,11 @@
 // Imports
 @import 'src/sass/styles.scss';
 
-$a-fade-in: fade-in 0.3s linear;
 
 // Sign In
 .sign-in-wrapper {
     display: grid;
-    height: 100vh;
+    height: 100%;
     @include animate($a-fade-in);
         @keyframes fade-in {
             0% { opacity: 0; }
@@ -19,6 +18,7 @@ $a-fade-in: fade-in 0.3s linear;
             flex-direction: column;
             align-self: center;
             justify-self: center;
+            padding: 1rem;
             
             div {
                 text-align: center;

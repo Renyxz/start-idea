@@ -1,0 +1,63 @@
+// Imports
+@import 'src/sass/styles.scss';
+
+
+.add-idea-wrapper {
+    display: grid;
+    height: 100%;
+    @include animate($a-fade-in);
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        width: 70%;
+        font-size: 5rem;
+        
+        input, 
+        textarea {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            font-size: 1rem;
+            border: $border; 
+            border-radius: 3px;
+            resize: none;
+        }
+
+        textarea {
+            height: 300px;
+        }
+
+        .add-idea-buttons {
+
+            button {
+                float: right;
+                padding: 0.5rem 1rem;
+            }
+
+            button:first-child {
+                background: none;
+                border: none;
+                margin-left: 1rem;
+            }
+
+            button:last-child {
+                background: transparent;
+                border: $border;
+                border-radius: 3px;
+                border-color: $primary-green;
+                color: $primary-green;
+            }
+
+            button:last-child:hover {
+                background: $primary-green;
+                color: $white;
+            }
+        }
+    }
+}

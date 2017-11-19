@@ -12,11 +12,11 @@
 }
 
 .grid-wrapper {
-    div {
+    .post-wrapper {
         position: relative;
         display: inline-block;
         background: $white;
-        padding: 2rem;
+        padding: 3rem;
         margin: 0.5rem 0;
         border: $border;
         @include transition($fade-in);
@@ -27,20 +27,41 @@
                 100% { opacity: 1; transform: translateY(0px); }
             }
 
+            .post-brief {
+                margin: 1rem 0;
+            }
+
             
-        i {
-            position: absolute;
-            right: 1.1rem;
-            cursor: pointer;
+            i {
+                position: absolute;
+                right: 1rem;
+                bottom: 1rem;
+                cursor: pointer;
+            }
+
+                // Original Poster Display
+                .op-display {
+                    display: flex;
+                    position: absolute;
+                    top: 1rem;
+                    left: 1rem;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 1rem;
+                        border-radius: 50%;
+                    }
+                }
         }
 
+        .post-wrapper:hover {
+            background: $light-grey;
+            border-color: $white;
         }
     }
 
 
-.grid-wrapper {
-    div:hover {
-        background: $light-grey;
-        border-color: $white;
-    }
-}
+    
+
+

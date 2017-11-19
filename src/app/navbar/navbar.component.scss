@@ -30,66 +30,166 @@
 
 .nav-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
     margin: 0 3rem;
 }
 
 .nav-wrapper {
-    div:last-child {
+    .nav-list-wrapper {
         display: flex;
         justify-self: right;
-        align-self: center;
 
-        div:last-child {
+        button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-list {
             display: flex;
-            margin-left: 3rem;
 
-            a {
-                font-size: 0.8rem;
-                margin-left: 1rem;
-                padding: 0.5rem 1rem;
-            }
-            
-            a:last-child {
-                border: $border;
-                border-color: $light-green;
-                color: $light-green;
-                border-radius: 3px;
+            .nav-close-button {
+                display: none;
+                position: absolute;
+                top: 1rem;
+                right: 2rem;
+                font-size: 2rem;
+                cursor: pointer;
+                @include transition($fade-in);
             }
 
-            a:last-child:hover {
-                border-color: $primary-green;
-                background: $primary-green;
+            .nav-close-button:hover {
                 color: $white;
             }
+        
+            .nav-items {
+                display: flex;
+                align-self: center;
+
+                    a {
+                        padding: 0.5rem 1rem;
+                        font-size: 0.8rem;
+                    }
+
+                    a:last-child {
+                        margin-left: 1.5rem;
+                        border: $border;
+                        border-radius: 3px;
+                        border-color: $primary-green;
+                        color: $primary-green;
+                    }
+            }
+        }
+    }
+
+}
+
+
+// Search bar 
+.search-bar {
+    margin-right: 3rem;
+    
+    form {
+        position: relative;
+
+        input {
+            padding: 0.5rem 1rem;
+            border: $border;
+            border-radius: 18px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: $light-green;
+        }
+    
+        i {
+            position: absolute;
+            right: 12px;
+            top: 8px;
+            padding-left: 0.5rem;
+            background: $white;
+        }
+    
+        i:hover {
+            cursor: pointer;
         }
     }
 }
 
 
-.search-bar {
-    position: relative;
-    
-    input {
-        padding: 0.5rem 1rem;
-        border: $border;
-        border-radius: 18px;
-    }
-    
-    input:focus {
-        outline: none;
-        border-color: $light-green;
-    }
+// Media query
+@media (max-width: 700px) {
+    .nav-wrapper {
+        grid-template-columns: 2fr 1fr;
+        margin: 0 2rem;
 
-    i {
-        position: absolute;
-        right: 12px;
-        top: 8px;
-        padding-left: 0.5rem;
-        background: $white;
-    }
+        .nav-list-wrapper {
+            button {
+                display: block;
+            }
 
-    i:hover {
-        cursor: pointer;
+            .nav-list {
+                display: grid;
+                height: 0;
+                width: 100%;
+                position: fixed; 
+                z-index: 9999;
+                left: 0;
+                top: 0;
+                background: rgba(0,0,0, 0.95); 
+                overflow: hidden; 
+                @include transition($fade-in);
+
+                .nav-close-button {
+                    display: block;
+                }
+
+                .nav-items {
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    justify-self: center;
+
+                    .search-bar {
+                        margin-right: 0;
+                        margin-bottom: 2rem;
+
+                        form {
+                            input {
+                                background: transparent;
+                                color: $white;
+                                border-color: $primary-color;
+                            }
+
+                            input:focus {
+                                border-color: $primary-green;
+                            }
+
+                            i {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    a, 
+                    a:last-child {
+                        border: none;
+                        margin-left: 0;
+                        margin-bottom: 1rem;
+                        padding: none;
+                        font-size: 1.5rem;
+                        color: $primary-color;
+                        text-align: center;
+                    }
+
+                    a:hover {
+                        color: $primary-green;
+                    }
+                    
+                }
+            }
+        }
     }
 }

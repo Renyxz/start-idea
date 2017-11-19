@@ -5,17 +5,30 @@
               <i class="fa fa-flash"></i> Start!
           </a>
       </div>
-
-      <div>
-          <div class="search-bar">
-              <input type="text" placeholder="Search" />
-              <i class="fa fa-search"></i>
-          </div>
-
-          <div>
-              <a routerLink="sign-in">Sign In</a>
-              <a routerLink="sign-up">Sign Up</a>
+      
+      <div class="nav-list-wrapper">
+          <button (click)="showNav()">
+              <i class="fa fa-bars menu"></i>
+          </button>
+    
+          <div class="nav-list" id="nav">
+              <span class="nav-close-button" (click)="hideNav()">
+                    &times;
+              </span>
+    
+              <div class="nav-items" id="nav-i">
+                    <div class="search-bar">
+                        <form action="">
+                            <input type="text" placeholder="Search" />
+                            <i class="fa fa-search"></i>
+                        </form>  
+                    </div>
+        
+                    <a routerLink="sign-in" (click)="hideNav()">Sign In</a>
+                    <a routerLink="sign-up" (click)="hideNav()">Sign Up</a>
+              </div>
           </div>
       </div>
+
   </div>
 </div>
