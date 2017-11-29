@@ -1,11 +1,11 @@
 <div class="add-idea-wrapper">
   <form action="">
-    <input type="text" placeholder="What is your idea called?" />
-    <textarea placeholder="What is your idea about?"></textarea>
+    <input [(ngModel)]="title" name="title"  type="text" placeholder="What is your idea called?" />
+    <textarea [(ngModel)]="content" name="content" placeholder="What is your idea about?"></textarea>
     
     <div class="add-idea-buttons">
       <button routerLink="">Cancel</button>
-      <button>Post</button>
+      <button (click)="submit()" type="submit">Post</button>
     </div>
   </form>
 </div>

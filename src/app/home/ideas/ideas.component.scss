@@ -22,13 +22,21 @@
         @include transition($fade-in);
         @include break-inside(avoid);
         @include animate($effect);
-            @keyframes pop {
-                0% { opacity: 0; transform: translateY(50px); }
-                100% { opacity: 1; transform: translateY(0px); }
-            }
-
-            .post-brief {
-                margin: 1rem 0;
+        @keyframes pop {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0px); }
+        }
+        
+        .post-brief {
+            margin: 1rem 0;
+            
+                p {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 10;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
 
             
@@ -53,12 +61,22 @@
                         border-radius: 50%;
                     }
                 }
+        
+            .fav-button {
+                display: none;
+                color: $primary-color;
+            }
         }
 
         .post-wrapper:hover {
             background: $light-grey;
             border-color: $white;
+
+            .fav-button {
+                display: block;
+            }
         }
+
     }
 
 

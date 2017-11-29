@@ -1,16 +1,17 @@
 <div class="grid-wrapper">
-  <div class="post-wrapper" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()">
+  <div class="post-wrapper" 
+    *ngFor="let post of posts | async">
     <div class="op-display">
-      <img src="https://placeimg.com/100/100/any" alt="" />
+      <img src="https://placeimg.com/100/100/any" alt="User avatar" />
       <p>User</p>
     </div>
 
     <div class="post-brief">
       <p>
-        Flying park and space station...
+        {{ post.content }}
       </p>
     </div>
 
-    <i class="fa fa-bookmark fav-button" *ngIf="allowBookmark"></i>
+    <i class="fa fa-bookmark fav-button"></i>
   </div>
 </div>

@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
+
+interface Post {
+  title: string;
+  content: string;
+}
+
 
 @Component({
   selector: 'app-ideas',
@@ -7,20 +17,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdeasComponent implements OnInit {
 
-  allowBookmark = false;
+  postsCollection: AngularFirestoreCollection<Post>;
+  posts: Observable<Post[]>;
 
-  constructor() { }
+
+  constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
-
+    this.postsCollection = this.afs.collection('posts');
+    this.posts = this.postsCollection.valueChanges();
   }
 
-  mouseEnter() {
-    this.allowBookmark = true;
-  }
-
-  mouseLeave() {
-    this.allowBookmark = false;
-  }
 
 }
