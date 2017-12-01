@@ -1,0 +1,23 @@
+@import 'src/sass/styles.scss';
+
+.browse-post-wrapper {
+    width: inherit;
+    padding-top: 5rem;
+
+    .post-wrapper {
+        width: 50%;
+        margin: auto;
+        padding: 1rem 3rem 3rem;
+        border-bottom: 1px solid $medium-grey;
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 200%;
+        }
+    }
+}

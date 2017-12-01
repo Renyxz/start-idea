@@ -1,3 +1,10 @@
-<p>
-  browse-post works!
-</p>
+<div class="browse-post-wrapper">
+  <div class="post-wrapper">
+    <h1>{{ (post | async)?.title }}</h1>
+
+    <p>
+      {{ (post | async)?.content }}
+    </p>
+  </div>
+
+</div>

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddIdeaComponent } from './add-idea/add-idea.component';
+import { BrowsePostComponent } from './browse-post/browse-post.component';
 
 
 
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'add-idea',
     component: AddIdeaComponent
+  },
+  {
+    path: 'browse-post/:id',
+    component: BrowsePostComponent
   },
   {
     path: '**',

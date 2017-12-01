@@ -9,6 +9,10 @@ interface Post {
   content: string;
 }
 
+interface PostId extends Post {
+  id: string;
+}
+
 
 @Component({
   selector: 'app-ideas',
@@ -18,14 +22,22 @@ interface Post {
 export class IdeasComponent implements OnInit {
 
   postsCollection: AngularFirestoreCollection<Post>;
-  posts: Observable<Post[]>;
+  posts: any;
 
 
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
     this.postsCollection = this.afs.collection('posts');
-    this.posts = this.postsCollection.valueChanges();
+    this.posts = this.postsCollection.snapshotChanges()
+    .map( actions => {
+      // console.log(actions);
+      return actions.map( a => {
+        const data = a.payload.doc.data() as Post;
+        const id = a.payload.doc.id;
+        return { data, id };
+      });
+    });
   }
 
 
